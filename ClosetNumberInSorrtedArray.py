@@ -22,3 +22,7 @@ class Solution:
             return start
         return end
 
+s = Solution()
+l = [1,3,3,4]
+r = s.closestNumber(l, 2)
+print(r)
