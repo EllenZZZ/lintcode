@@ -14,17 +14,18 @@ class Solution:
         paths = []
         if root == None:
             return paths
+            
+        if root.left == None and root.right == None:
+            paths.append("" + root.val)
+            return paths
         
         leftPaths = self.binaryTreePaths(root.left)
         rightPaths = self.binaryTreePaths(root.right)
         
         for path in leftPaths:
-            paths.add(root.val + "->" + path)
+            paths.append(root.val + "->" + path)
             
         for paths in rightPaths:
-            paths.add(root.val + "->" + path)
-            
-        if len(paths) == 0:
-            paths.add("" + root.val)
+            paths.append(root.val + "->" + path)
             
         return paths
